@@ -22,14 +22,19 @@ This may be helpful for your nex steps:
    The command line 'php app/console router:debug' shows you the configured routes.
 * In [the sylius sandbox shop](https://github.com/Sylius/Sylius-Sandbox/tree/master/src/Sylius/Bundle/SandboxBundle/Process)
    you find complete working example.
-* In order to get the URL in a twig template right you need something like this:
+
+## Twig snippet
+
+In order to get the URL in a twig template right you need something like this:
+
 ``` twig
 <form action="{{ path('sylius_flow_forward', {'scenarioAlias': 'checkout', 'stepName': 'terms_and_condition'}) }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
     <input type="submit" />
 </form>
 ```
-* Service definition
+
+## Service definition
 
 ``` xml
 <!-- Resources/config/services.xml -->
